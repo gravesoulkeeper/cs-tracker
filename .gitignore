@@ -1,0 +1,6 @@
+tmux-resurrect/
+node_modules/
+.env
+dist/
+build/
+out/
