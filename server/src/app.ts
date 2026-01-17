@@ -1,14 +1,18 @@
 import type { Express, Request, Response, NextFunction } from "express";
-import cookieParser from "cookie-parser";
 import express from "express";
 import cors from "cors";
+import path from "path";
 
-import { ApiResponse } from "./utils/response.ts";
-import { CORS_ORIGIN } from "./config/constants.ts";
+import { CORS_ORIGIN } from "@config";
+import { ApiResponse } from "@utils";
+import router from "@routes";
 
 export const app: Express = express();
 
+app.set("trust proxy", true);
+
 // middlewares
+app.use("/uploads", express.static(path.resolve("uploads")));
 app.use(
 	cors({
 		origin: CORS_ORIGIN,
@@ -17,11 +21,10 @@ app.use(
 	}),
 );
 app.use(express.json({ limit: "10kb" }));
-app.use(cookieParser());
-
-// routes
+app.use("/api/v1", router);
 
 // handle errors
 app.use((err: Error, req: Request, res: Response, next: NextFunction): void => {
 	res.status(500).json(ApiResponse.error(err.message, 500));
+	console.log(err);
 });
