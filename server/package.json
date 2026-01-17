@@ -4,30 +4,41 @@
 	"description": "Manage and monitor game servers, providing admin controls and user management routes for seamless server operation.",
 	"author": "Grave Keeper",
 	"type": "module",
-	"main": "server.ts",
+	"main": "dist/index.js",
 	"scripts": {
-		"dev": "npx tsx watch server.ts"
+		"typecheck": "tsc --noEmit",
+		"typecheck:watch": "tsc --noEmit --watch",
+		"clean": "rm -rf dist",
+		"build": "esbuild src/server.ts --bundle --platform=node --format=esm --outfile=dist/index.js --minify --packages=external",
+		"rebuild": "npm run clean && npm run build",
+		"dev": "tsx src/server.ts",
+		"dev:watch": "tsx watch src/server.ts",
+		"start": "node --enable-source-maps dist/index.js",
+		"test": "vitest run",
+		"format": "npx prettier --write ."
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/gravesoulkeeper/cs-tracker.git"
 	},
 	"dependencies": {
-		"cookie-parser": "^1.4.7",
 		"cors": "^2.8.5",
-		"dotenv": "^17.2.2",
+		"dotenv": "^17.2.3",
 		"express": "^5.1.0",
+		"jsonwebtoken": "^9.0.2",
 		"mongoose": "^8.18.2",
-		"multer": "^2.0.2",
-		"socket.io": "^4.8.1"
+		"multer": "^2.0.2"
 	},
 	"devDependencies": {
-		"@types/cookie-parser": "^1.4.9",
+		"@types/cors": "^2.8.19",
 		"@types/express": "^5.0.3",
+		"@types/jsonwebtoken": "^9.0.10",
 		"@types/mongoose": "^5.11.96",
 		"@types/multer": "^2.0.0",
+		"esbuild": "0.27.2",
 		"prettier": "^3.6.2",
 		"tsx": "^4.20.6",
-		"typescript": "^5.9.2"
+		"typescript": "^5.9.2",
+		"vitest": "^3.2.4"
 	}
 }

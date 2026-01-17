@@ -1,0 +1,38 @@
+{
+	"compilerOptions": {
+		// product
+		"rootDir": "src",
+		"outDir": "dist",
+		"module": "esnext",
+		"moduleResolution": "bundler",
+		"target": "esnext",
+		"sourceMap": true,
+		"declaration": true,
+		"declarationMap": true,
+		// path aliases
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./*"],
+			"@config": ["./src/config"],
+			"@controllers": ["./src/controllers"],
+			"@middleware": ["./src/middleware"],
+			"@models": ["./src/models"],
+			"@routes": ["./src/routes"],
+			"@services": ["./src/services"],
+			"@types": ["./src/types"],
+			"@utils": ["./src/utils"]
+		},
+		// check
+		"strict": true,
+		"noUncheckedIndexedAccess": true,
+		"exactOptionalPropertyTypes": true,
+		"isolatedModules": true,
+		"allowImportingTsExtensions": false,
+		"esModuleInterop": true,
+		"noUncheckedSideEffectImports": true,
+		"skipLibCheck": true,
+		"moduleDetection": "force"
+	},
+	"include": ["src/**/*"],
+	"exclude": ["node_modules", "dist"]
+}
