@@ -1,1 +1,79 @@
 @import "tailwindcss";
+
+@theme {
+	/* background colors */
+	--color-bprimary: var(--bg-primary);
+	--color-bsecondary: var(--bg-secondary);
+	--color-bnavbar: var(--bg-navbar);
+	--color-bbody: var(--bg-body);
+	--color-bsection: var(--bg-section);
+	--color-bfooter: var(--bg-footer);
+	--color-binput: var(--bg-input);
+	--color-balive: var(--bg-alive);
+	--color-bdead: var(--bg-dead);
+	--color-bbfilter: var(--bg-btn-filter);
+	--color-bbauth: var(--bg-btn-auth);
+	--color-bbsend: var(--bg-btn-send);
+	--color-bbaction: var(--bg-btn-action);
+
+	/* text colors */
+	--color-tprimary: var(--text-primary);
+	--color-tsecondary: var(--text-secondary);
+	--color-tnavbar: var(--text-navbar);
+	--color-theading: var(--text-heading);
+	--color-tinput: var(--text-input);
+	--color-light: var(--text-light); /* Exception */
+	--color-talive: var(--text-alive);
+	--color-tdead: var(--text-dead);
+	--color-tbfilter: var(--text-btn-filter);
+	--color-tbauth: var(--text-btn-auth);
+	--color-tbsend: var(--text-btn-send);
+	--color-tbaction: var(--text-btn-action);
+
+	/* font sizes */
+	--text-3xs: var(--font-size-3xs);
+	--text-2xs: var(--font-size-2xs);
+	--text-xs: var(--font-size-xs);
+	--text-sm: var(--font-size-sm);
+	--text-md: var(--font-size-md);
+	--text-lg: var(--font-size-lg);
+	--text-xl: var(--font-size-xl);
+	--text-2xl: var(--font-size-2xl);
+	--text-3xl: var(--font-size-3xl);
+
+	/* font weights */
+	--font-weight-thin: var(--font-weight-thin);
+	--font-weight-extralight: var(--font-weight-extralight);
+	--font-weight-light: var(--font-weight-light);
+	--font-weight-normal: var(--font-weight-normal);
+	--font-weight-medium: var(--font-weight-medium);
+	--font-weight-semibold: var(--font-weight-semibold);
+	--font-weight-bold: var(--font-weight-bold);
+	--font-weight-extrabold: var(--font-weight-extrabold);
+	--font-weight-black: var(--font-weight-black);
+
+	/* font families */
+	--font-primary: var(--font-family-primary);
+	--font-secondary: var(--font-family-secondary);
+	--font-navbar: var(--font-family-navbar);
+	--font-heading: var(--font-family-heading);
+	--font-input: var(--font-family-input);
+	--font-light: var(--font-family-light);
+	--font-button: var(--font-family-button);
+	--font-user: var(--font-family-user);
+	--font-number: var(--font-family-number);
+
+	/* border radius */
+	--radius-primary: var(--border-radius-primary);
+	--radius-secondary: var(--border-radius-secondary);
+	--radius-section: var(--border-radius-section);
+	--radius-input: var(--border-radius-input);
+	--radius-bfilter: var(--border-radius-btn-filter);
+	--radius-bauth: var(--border-radius-btn-auth);
+	--radius-bsend: var(--border-radius-btn-send);
+	--radius-baction: var(--border-radius-btn-action);
+}
+
+html {
+	font-family: var(--font-family-primary), sans-serif;
+}
