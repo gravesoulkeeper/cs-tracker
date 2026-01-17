@@ -1,0 +1,28 @@
+import type { IconProps } from "@types";
+
+const MinusCircle = ({
+	width = 40,
+	height = 40,
+	fill = "#292D32",
+	stroke = "",
+	...rest
+}: IconProps) => {
+	return (
+		<svg
+			width={width}
+			height={height}
+			viewBox="0 0 40 40"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+			{...rest}
+		>
+			<path
+				d="M20 3.33333C10.8167 3.33333 3.33337 10.8167 3.33337 20C3.33337 29.1833 10.8167 36.6667 20 36.6667C29.1834 36.6667 36.6667 29.1833 36.6667 20C36.6667 10.8167 29.1834 3.33333 20 3.33333ZM26.5334 21.25H13.2C12.5167 21.25 11.95 20.6833 11.95 20C11.95 19.3167 12.5167 18.75 13.2 18.75H26.5334C27.2167 18.75 27.7834 19.3167 27.7834 20C27.7834 20.6833 27.2334 21.25 26.5334 21.25Z"
+				fill={fill}
+				stroke={stroke}
+			/>
+		</svg>
+	);
+};
+
+export default MinusCircle;
